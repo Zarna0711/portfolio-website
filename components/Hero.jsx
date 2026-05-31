@@ -73,17 +73,12 @@ export default function Hero() {
           {/* Headshot placeholder */}
           <FadeIn delay={100} className="flex-shrink-0">
             <div className="relative">
-              {/* Replace with <img src="/headshot.jpg" alt="Zarna N. Patel" /> once you have the photo */}
-              <div
-                className="rounded-full bg-gradient-to-br from-sage-100 to-sage-200 border-4 border-sage-200 flex items-center justify-center text-sage-500 font-medium"
+              <img
+                src="/headshot.jpg"
+                alt="Zarna N. Patel"
+                className="rounded-full object-cover border-4 border-sage-200"
                 style={{ width: 220, height: 220 }}
-                aria-label="Profile photo placeholder"
-              >
-                <div className="text-center">
-                  <div className="text-4xl mb-1">👤</div>
-                  <span className="text-sm">Photo</span>
-                </div>
-              </div>
+              />
               <div className="absolute -bottom-2 -right-2 w-16 h-16 rounded-full bg-sage-500 opacity-10" />
               <div className="absolute -top-2 -left-2 w-10 h-10 rounded-full bg-sage-400 opacity-15" />
             </div>
