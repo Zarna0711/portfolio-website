@@ -4,10 +4,6 @@ import FadeIn from './FadeIn'
 
 const publications = [
   {
-    citation: 'Patel, Z., Bagda, K., & Attur, K. (2020). A clinical study to evaluate the influence of EndoVac, Passive Ultrasonic Irrigation, EndoActivator and Conventional Irrigation Technique… Unpublished master\'s thesis, Sankalchand Patel University.',
-    note: 'Prospective RCT, n=60',
-  },
-  {
     citation: 'Patel P, Bagda K, Attur K, Vachaani K, Patel Z, et al. (2024). Clinical Comparative Evaluation of LED and Diode Laser on Efficacy of 40% Hydrogen Peroxide on Tooth Whitening. Journal of Advanced Medical and Dental Sciences Research, 12(1): 31–35.',
     note: null,
   },
@@ -19,6 +15,13 @@ const publications = [
     citation: 'Four additional co-authored peer-reviewed publications (2018–2020); full list available upon request.',
     note: null,
     italic: true,
+  },
+]
+
+const research = [
+  {
+    citation: 'Patel, Z., Bagda, K., & Attur, K. (2020). A clinical study to evaluate the influence of EndoVac, Passive Ultrasonic Irrigation, EndoActivator and Conventional Irrigation Technique… Unpublished master\'s thesis, Sankalchand Patel University.',
+    note: 'Prospective RCT, n=60',
   },
 ]
 
@@ -120,6 +123,32 @@ export default function Publications() {
             </div>
           </FadeIn>
         </div>
+
+        {/* Research */}
+        <FadeIn delay={300}>
+          <div className="mt-10">
+            <h3 className="font-600 text-gray-900 text-lg mb-5 flex items-center gap-2">
+              <span className="w-6 h-6 rounded bg-sage-100 flex items-center justify-center">
+                <svg className="w-3.5 h-3.5 text-sage-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                </svg>
+              </span>
+              Research
+            </h3>
+            <div className="space-y-4">
+              {research.map((item, i) => (
+                <div key={i} className="bg-white rounded-lg p-4 border border-gray-100 hover:border-sage-200 transition-colors">
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.citation}</p>
+                  {item.note && (
+                    <span className="mt-2 inline-block px-2 py-0.5 bg-sage-50 text-sage-600 text-xs rounded border border-sage-200">
+                      {item.note}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

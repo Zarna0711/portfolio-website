@@ -53,7 +53,7 @@ export default function Navbar() {
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             className="text-gray-900 font-semibold text-lg tracking-tight hover:text-sage-600 transition-colors"
           >
-            Zarna N. Patel
+            Zarna Patel
           </a>
 
           {/* Desktop links */}

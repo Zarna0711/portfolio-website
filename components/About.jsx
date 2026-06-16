@@ -28,7 +28,7 @@ const contactItems = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    label: 'Fairfax, VA',
+    label: 'Boston, MA',
     href: null,
   },
   {
@@ -38,7 +38,7 @@ const contactItems = [
       </svg>
     ),
     label: 'LinkedIn Profile',
-    href: '#',
+    href: 'https://www.linkedin.com/in/dr-zarna-patel/',
   },
 ]
 
@@ -60,7 +60,7 @@ export default function About() {
                 Versatile healthcare professional with 9+ years of clinical experience and 5+ years in quality compliance and regulatory auditing. Proven track record across multi-site clinical environments, including full accreditation lifecycle management, clinical systems configuration, IRB federal compliance, and geospatial data analysis.
               </p>
               <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                Currently completing an MS in Health Informatics (Data Analytics concentration) at George Mason University (GPA: 3.97), I am uniquely positioned to bridge direct patient care expertise with graduate-level informatics training — delivering compliant, data-driven solutions across clinical and operational healthcare environments.
+                Recently graduated as MS in Health Informatics (Data Analytics concentration) at George Mason University. I am uniquely positioned to bridge direct patient care expertise with graduate-level informatics training, delivering compliant, data-driven solutions across clinical and operational healthcare environments.
               </p>
 
               {/* Contact block */}
@@ -94,15 +94,15 @@ export default function About() {
 
               <div className="relative z-10 space-y-6">
                 <div>
-                  <p className="text-xs font-600 text-sage-600 tracking-widest uppercase mb-1">Current</p>
+                  <p className="text-xs font-600 text-sage-600 tracking-widest uppercase mb-1">Education</p>
                   <p className="font-semibold text-gray-900">MS Health Informatics</p>
-                  <p className="text-gray-500 text-sm">George Mason University · GPA 3.97</p>
+                  <p className="text-gray-500 text-sm">George Mason University</p>
                 </div>
                 <div className="h-px bg-gray-100" />
                 <div>
                   <p className="text-xs font-600 text-sage-600 tracking-widest uppercase mb-1">Focus Areas</p>
                   <div className="flex flex-wrap gap-2">
-                    {['Clinical Research', 'Data Analytics', 'Health Informatics', 'IRB Compliance', 'Geospatial Analysis'].map((tag) => (
+                    {['Data Analytics', 'Quality Compliance', 'Public Health', 'Clinical Research', 'Health Informatics', 'Healthcare Operations'].map((tag) => (
                       <span key={tag} className="px-2.5 py-1 bg-sage-50 text-sage-700 text-xs rounded-full border border-sage-200">
                         {tag}
                       </span>
@@ -111,7 +111,7 @@ export default function About() {
                 </div>
                 <div className="h-px bg-gray-100" />
                 <div className="grid grid-cols-3 gap-4 text-center">
-                  {[['9+', 'Years Clinical'], ['700+', 'IRB Protocols'], ['3', 'Accreditations Led']].map(([num, label]) => (
+                  {[['9+', 'Years Clinical'], ['700+', 'IRB Protocols'], ['3', 'Led Accreditations lifecycle']].map(([num, label]) => (
                     <div key={label}>
                       <p className="text-2xl font-700 text-sage-600">{num}</p>
                       <p className="text-xs text-gray-500 leading-tight">{label}</p>

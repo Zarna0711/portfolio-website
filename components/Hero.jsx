@@ -1,14 +1,31 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import FadeIn from './FadeIn'
+
+const roles = [
+  'Health Informatics Specialist',
+  'Quality Compliance Analyst',
+  'Data Analyst',
+  'Dentist',
+]
 
 const stats = [
   '9+ Years Clinical Experience',
   '5+ Years Quality & Compliance',
-  'GPA 3.97 · MS Health Informatics',
+  'MS Health Informatics',
 ]
 
 export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((i) => (i + 1) % roles.length)
+    }, 2500)
+    return () => clearInterval(interval)
+  }, [])
+
   const scrollToProjects = (e) => {
     e.preventDefault()
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
@@ -22,14 +39,11 @@ export default function Hero() {
           {/* Text content */}
           <div className="flex-1 text-center md:text-left">
             <FadeIn delay={0}>
-              <p className="text-sage-600 font-medium text-sm tracking-widest uppercase mb-4">
-                Health Informatics Specialist
-              </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-800 text-gray-900 leading-tight mb-4">
-                Zarna N. Patel
+                Zarna Patel
               </h1>
-              <p className="text-lg sm:text-xl text-gray-500 font-400 mb-6 leading-relaxed">
-                Health Informatics Specialist&nbsp;·&nbsp;Clinical Researcher&nbsp;·&nbsp;Data Analyst
+              <p className="text-lg sm:text-xl text-sage-600 font-500 mb-6 leading-relaxed min-h-[2rem] transition-all duration-500">
+                {roles[roleIndex]}
               </p>
               <p className="text-gray-600 text-base sm:text-lg italic leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
                 &ldquo;Bridging 9+ years of clinical expertise with data-driven health informatics to deliver compliant, measurable outcomes.&rdquo;
@@ -38,13 +52,20 @@ export default function Hero() {
 
             <FadeIn delay={150}>
               <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start mb-8">
-                {/* Place Zarna_Patel_CV.pdf in the /public directory */}
                 <a
                   href="/Zarna_Patel_CV.pdf"
                   download
                   className="inline-flex items-center justify-center px-6 py-3 bg-sage-500 text-white font-medium rounded-lg hover:bg-sage-600 transition-colors min-h-[44px]"
                 >
                   Download CV
+                </a>
+                <a
+                  href="/Zarna_Patel_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-600 font-medium rounded-lg hover:bg-gray-50 transition-colors min-h-[44px]"
+                >
+                  View Resume
                 </a>
                 <a
                   href="#projects"
@@ -75,7 +96,7 @@ export default function Hero() {
             <div className="relative">
               <img
                 src="/headshot.jpg"
-                alt="Zarna N. Patel"
+                alt="Zarna Patel"
                 className="rounded-full object-cover border-4 border-sage-200"
                 style={{ width: 220, height: 220 }}
               />
